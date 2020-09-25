@@ -204,3 +204,25 @@ button {
    width: 40%;
    height: 30px;
 }
+.task {
+   width: 70%;
+   padding-top: 25px;
+}
+.task-con {
+   display: flex;
+   justify-content: space-around;
+   font-weight: bold;
+}
+.task-con button {
+   cursor: pointer;
+   width: 100px;
+   height: 40px;
+   background-color: #ec8892;
+   border-radius: 10px;
+}
+
+.table-div {
+   background-color: rgb(224, 222, 222);
+   height: 100px;
+   margin-top: 5px;
+}
