@@ -9,7 +9,11 @@ export default class PrivateRoute extends Component {
             <Route
                {...rest}
                render={(props) =>
-                  false ? <Redirect to="/login" /> : <Component {...props} />
+                  !localStorage.getItem("isAuthenticated") ? (
+                     <Redirect to="/login" />
+                  ) : (
+                     <Component {...props} />
+                  )
                }
             />
          </Fragment>

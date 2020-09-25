@@ -29,6 +29,19 @@ class Navbar extends Component {
                      </h1>
                   </button>
                </div>
+               {localStorage.getItem("isAuthenticated") && (
+                  <button
+                     onClick={() => {
+                        localStorage.removeItem("isAuthenticated");
+                        window.location.reload(false);
+                     }}
+                     className="logout"
+                  >
+                     <h1>
+                        <Link to="/login">Logout</Link>
+                     </h1>
+                  </button>
+               )}
             </nav>
          </Fragment>
       );

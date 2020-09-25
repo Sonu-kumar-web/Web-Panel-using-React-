@@ -7,6 +7,10 @@ import Landing from "./components/layouts/Landing";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import ChangePassword from "./components/auth/ChangePassword";
+import Home from "./components/dashboard/Home";
+import Tasks from "./components/dashboard/Tasks";
+import User from "./components/dashboard/User";
+
 import PrivateRoute from "./components/routing/PrivateRoute";
 
 class App extends Component {
@@ -25,6 +29,9 @@ class App extends Component {
                         path="/change-password"
                         component={ChangePassword}
                      />
+                     <PrivateRoute exact path="/home" component={Home} />
+                     <PrivateRoute exact path="/tasks" component={Tasks} />
+                     <PrivateRoute exact path="/user" component={User} />
                   </Switch>
                </section>
             </Fragment>
