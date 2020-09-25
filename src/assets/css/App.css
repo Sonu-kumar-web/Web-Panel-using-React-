@@ -199,3 +199,8 @@ button {
    margin-left: 60%;
    height: 50px;
 }
+
+.dropdown {
+   width: 40%;
+   height: 30px;
+}
