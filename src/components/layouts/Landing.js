@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 
 class Landing extends Component {
-   //    if(true) {
-   //       return <Redirect to="/" />;
-   //    }
-
    render() {
+      if (localStorage.getItem("isAuthenticated")) {
+         return <Redirect to="/home" />;
+      }
       return (
          <section className="landing">
             <div className="dark-overlay">

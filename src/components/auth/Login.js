@@ -18,7 +18,7 @@ export default class extends Component {
       const { username, password } = this.state;
 
       if (localStorage.getItem("isAuthenticated")) {
-         return <Redirect to="/" />;
+         return <Redirect to="/home" />;
       }
       return (
          <Fragment>

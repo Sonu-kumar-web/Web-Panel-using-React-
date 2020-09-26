@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
 import Task from "./Task";
+import { Link } from "react-router-dom";
+import AddNewTask from "./AddNewTask";
 
 export default class Tasks extends Component {
-   state = { data: "", showData: [] };
+   state = { data: "", showData: [], newTask: false };
 
    componentDidMount = async () => {
       let res = await axios.get("http://jsonplaceholder.typicode.com/todos");
@@ -25,10 +27,36 @@ export default class Tasks extends Component {
       this.setState({ showData: newData });
    };
 
+   addNewTask = (formData) => {
+      this.setState((prevState) => ({
+         showData: [...formData, ...prevState.showData],
+      }));
+   };
+
+   closeForm = () => {
+      this.setState({ newTask: false });
+   };
+
    render() {
       return (
          <Fragment>
-            <div className="all-margin">
+            <button
+               type="submit"
+               className="btn btn-primary addTask"
+               value="addTask"
+               onClick={() => this.setState({ newTask: true })}
+            >
+               Add Task
+            </button>
+
+            {this.state.newTask && (
+               <AddNewTask
+                  formData={this.addNewTask}
+                  closeForm={this.closeForm}
+               />
+            )}
+
+            <div>
                {this.state.showData.map((task, index) => (
                   <Task
                      task={task}

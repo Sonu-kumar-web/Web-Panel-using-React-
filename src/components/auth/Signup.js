@@ -8,7 +8,7 @@ export default class Signup extends Component {
       e.preventDefault();
       const { username, password } = this.state;
       localStorage.setItem(username, password);
-
+      localStorage.setItem("ChangePassword", username);
       localStorage.setItem("isAuthenticated", true);
       window.location.reload(false);
    };
@@ -18,7 +18,7 @@ export default class Signup extends Component {
 
       //   Redirect if logged in
       if (localStorage.getItem("isAuthenticated")) {
-         return <Redirect to="/" />;
+         return <Redirect to="/home" />;
       }
 
       return (

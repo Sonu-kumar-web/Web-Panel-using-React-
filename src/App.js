@@ -10,6 +10,7 @@ import ChangePassword from "./components/auth/ChangePassword";
 import Home from "./components/dashboard/Home";
 import Tasks from "./components/dashboard/Tasks";
 import User from "./components/dashboard/User";
+import AddNewTask from "./components/dashboard/AddNewTask";
 
 import PrivateRoute from "./components/routing/PrivateRoute";
 
@@ -32,6 +33,11 @@ class App extends Component {
                      <PrivateRoute exact path="/home" component={Home} />
                      <PrivateRoute exact path="/tasks" component={Tasks} />
                      <PrivateRoute exact path="/user" component={User} />
+                     <PrivateRoute
+                        exact
+                        path="/add-new-task"
+                        component={AddNewTask}
+                     />
                   </Switch>
                </section>
             </Fragment>
