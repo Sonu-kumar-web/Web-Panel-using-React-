@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
 import Task from "./Task";
-import { Link } from "react-router-dom";
 import AddNewTask from "./AddNewTask";
 
 export default class Tasks extends Component {
